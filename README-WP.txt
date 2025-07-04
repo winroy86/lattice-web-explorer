@@ -115,8 +115,24 @@ WordPress editors can edit the following placeholders:
 
 ### 13. Build Command
 ```bash
-npm run build && lovable export --target wp-theme
+npm run build
+node build-wp-theme.js
 ```
+
+This will create a complete WordPress theme in the `wp-theme/` directory ready for upload.
+
+### 14. WordPress Export Process
+1. Run the build command above
+2. Zip the contents of the `wp-theme/` directory
+3. Upload to WordPress via Appearance > Themes > Add New > Upload Theme
+4. Activate the theme and install required plugins
+
+### 15. Content Management
+WordPress editors can manage content through:
+- **Theory Pages**: Custom post type with ACF fields for equations and 3D models
+- **Courses**: Course management with LifterLMS integration
+- **Publications**: PDF upload and bibliography management
+- **Blog Posts**: Standard WordPress posts with MathJax support
 
 ### 14. Support Files
 - Theme includes custom post type definitions

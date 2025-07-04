@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# Roy Winter's Cubic-Diamond-Lattice Theory - WordPress Ready
 
-## Project info
+A modern website for Roy Winter's Cubic-Diamond-Lattice Theory of Everything, built with React/TypeScript and designed for seamless WordPress conversion.
 
-**URL**: https://lovable.dev/projects/2f9b24ff-9177-43b5-9f95-4d61d7ab9861
+## 🚀 WordPress Conversion
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/2f9b24ff-9177-43b5-9f95-4d61d7ab9861) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build WordPress Theme
+```bash
+npm run build
+node build-wp-theme.js
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Creates a complete WordPress theme in `wp-theme/` directory ready for upload.
 
-**Use GitHub Codespaces**
+## ✨ Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Theory Content**: Complete mathematical framework with interactive 3D models
+- **WordPress Integration**: Custom post types, shortcodes, ACF support
+- **Multilingual**: English/Hebrew with RTL compatibility  
+- **WCAG 2.2 AA**: Full accessibility compliance
+- **Modern Stack**: React, TypeScript, Tailwind CSS
 
-## What technologies are used for this project?
+## 📖 Theory Structure
 
-This project is built with:
+1. Lattice Structure → 2. Discrete Time → 3. Photon Mechanics → 4. Electron Dynamics → 5. Gravity & Pressure Field → 6. Testable Predictions → 7. CMB Power Spectrum
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔧 WordPress Setup
 
-## How can I deploy this project?
+1. Run build commands above
+2. Zip `wp-theme/` and upload to WordPress  
+3. Install required plugins (see `README-WP.txt`)
+4. Configure via WordPress admin
 
-Simply open [Lovable](https://lovable.dev/projects/2f9b24ff-9177-43b5-9f95-4d61d7ab9861) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Ready to explore discrete-lattice physics!**

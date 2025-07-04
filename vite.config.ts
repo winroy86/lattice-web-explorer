@@ -19,4 +19,17 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // WordPress theme structure
+        assetFileNames: 'assets/[name].[ext]',
+        chunkFileNames: 'assets/[name].[ext]',
+        entryFileNames: 'assets/[name].js',
+      }
+    },
+    // Generate static HTML files that can be converted to PHP templates
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
 }));

@@ -9,12 +9,18 @@ interface LayoutProps {
 
 export const Layout = ({ children, className = "" }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
-      <main className={`flex-1 ${className}`}>
-        {children}
-      </main>
-      <SiteFooter />
-    </div>
+    <>
+      {/* WordPress head hook */}
+      {/* wp_head */}
+      <div className="min-h-screen flex flex-col bg-background">
+        <Navigation />
+        <main className={`flex-1 ${className}`}>
+          {children}
+        </main>
+        <SiteFooter />
+      </div>
+      {/* WordPress footer hook */}
+      {/* wp_footer */}
+    </>
   );
 };
