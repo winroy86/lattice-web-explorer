@@ -1,0 +1,38 @@
+WordPress Theme Upload Instructions
+=====================================
+
+Your CDLT Theory WordPress theme is now ready!
+
+TO UPLOAD TO WORDPRESS:
+
+1. ZIP the entire wp-theme folder:
+   - Select all files inside the wp-theme directory
+   - Create a ZIP file named "cdlt-theory.zip"
+
+2. Upload to WordPress:
+   - Go to your WordPress Admin → Appearance → Themes
+   - Click "Add New" → "Upload Theme"
+   - Choose your cdlt-theory.zip file
+   - Click "Install Now"
+   - Activate the theme
+
+3. Install Required Plugins:
+   - MathJax-LaTeX (for equations)
+   - Advanced Custom Fields (for content management)
+   - Three-D-Viewer (for 3D models)
+   - LifterLMS (for courses)
+
+4. Start Editing:
+   - Go to Theory Pages to add your content
+   - Use the custom fields for equations and 3D models
+   - Upload .glb files to Media Library for 3D models
+
+Your theme includes:
+✓ Custom post types (Theory, Courses, Publications)
+✓ Shortcodes for equations and 3D models
+✓ Responsive design with Tailwind CSS
+✓ MathJax equation rendering
+✓ Three.js 3D model support
+✓ WordPress admin integration
+
+Ready to use!
