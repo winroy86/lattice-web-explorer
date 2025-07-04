@@ -23,39 +23,89 @@ const CubicDiamondLattice = ({ autoRotate = true }: { autoRotate?: boolean }) =>
     }
   });
 
-  // Create lattice structure
-  const latticePoints = [];
-  const spacing = 1.5;
+  // Create cubic diamond lattice structure
+  // Diamond cubic consists of two interpenetrating FCC lattices
+  const latticePoints: [number, number, number][] = [];
+  const bonds: [[number, number, number], [number, number, number]][] = [];
+  const a = 1.2; // Lattice parameter
   
-  // Generate cubic lattice points
-  for (let x = -2; x <= 2; x++) {
-    for (let y = -2; y <= 2; y++) {
-      for (let z = -2; z <= 2; z++) {
-        latticePoints.push([x * spacing, y * spacing, z * spacing]);
+  // Generate diamond cubic lattice points
+  for (let i = -1; i <= 1; i++) {
+    for (let j = -1; j <= 1; j++) {
+      for (let k = -1; k <= 1; k++) {
+        // First FCC lattice (origin positions)
+        const fcc1: [number, number, number][] = [
+          [i * a, j * a, k * a],
+          [(i + 0.5) * a, (j + 0.5) * a, k * a],
+          [(i + 0.5) * a, j * a, (k + 0.5) * a],
+          [i * a, (j + 0.5) * a, (k + 0.5) * a]
+        ];
+        
+        // Second FCC lattice (offset by 1/4 body diagonal)
+        const offset = a * 0.25;
+        const fcc2: [number, number, number][] = fcc1.map(([x, y, z]) => [
+          x + offset, y + offset, z + offset
+        ] as [number, number, number]);
+        
+        latticePoints.push(...fcc1, ...fcc2);
+        
+        // Create tetrahedral bonds for diamond structure
+        fcc1.forEach((point1) => {
+          fcc2.forEach((point2) => {
+            const distance = Math.sqrt(
+              Math.pow(point1[0] - point2[0], 2) +
+              Math.pow(point1[1] - point2[1], 2) +
+              Math.pow(point1[2] - point2[2], 2)
+            );
+            // Bond if atoms are nearest neighbors (tetrahedral coordination)
+            if (distance < a * 0.5) {
+              bonds.push([point1, point2]);
+            }
+          });
+        });
       }
     }
   }
 
   return (
     <group ref={meshRef}>
+      {/* Lattice atoms */}
       {latticePoints.map((point, index) => (
-        <mesh key={index} position={point as [number, number, number]}>
-          <octahedronGeometry args={[0.1]} />
+        <mesh key={`atom-${index}`} position={point}>
+          <sphereGeometry args={[0.08]} />
           <meshPhongMaterial 
-            color={`hsl(${214 + (index * 10) % 60}, 70%, ${50 + (index * 5) % 30}%)`}
+            color={index % 8 < 4 ? "hsl(214, 70%, 60%)" : "hsl(200, 70%, 70%)"}
             transparent
-            opacity={0.8}
+            opacity={0.9}
           />
         </mesh>
       ))}
       
-      {/* Connection lines between lattice points */}
-      {latticePoints.slice(0, 20).map((point, index) => (
-        <mesh key={`line-${index}`} position={point as [number, number, number]}>
-          <cylinderGeometry args={[0.02, 0.02, spacing * 0.8]} />
-          <meshBasicMaterial color="hsl(214, 100%, 50%)" transparent opacity={0.3} />
-        </mesh>
-      ))}
+      {/* Tetrahedral bonds */}
+      {bonds.slice(0, 60).map((bond, index) => {
+        const [start, end] = bond;
+        const midpoint: [number, number, number] = [
+          (start[0] + end[0]) / 2,
+          (start[1] + end[1]) / 2,
+          (start[2] + end[2]) / 2
+        ];
+        const length = Math.sqrt(
+          Math.pow(end[0] - start[0], 2) +
+          Math.pow(end[1] - start[1], 2) +
+          Math.pow(end[2] - start[2], 2)
+        );
+        
+        return (
+          <mesh key={`bond-${index}`} position={midpoint}>
+            <cylinderGeometry args={[0.03, 0.03, length]} />
+            <meshBasicMaterial 
+              color="hsl(214, 80%, 50%)" 
+              transparent 
+              opacity={0.6} 
+            />
+          </mesh>
+        );
+      })}
     </group>
   );
 };
