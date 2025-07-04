@@ -1,0 +1,91 @@
+# CDLT Theory WordPress Theme
+# Copyright (C) 2024 Lovable AI
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: CDLT Theory 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: functions.php:26
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:27
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:28
+msgid "Theory Navigation"
+msgstr ""
+
+#: functions.php:40
+msgid "Theory Pages"
+msgstr ""
+
+#: functions.php:41
+msgid "Theory Page"
+msgstr ""
+
+#: functions.php:42
+msgid "Add New Theory Page"
+msgstr ""
+
+#: functions.php:43
+msgid "Edit Theory Page"
+msgstr ""
+
+#: functions.php:55
+msgid "Courses"
+msgstr ""
+
+#: functions.php:56
+msgid "Course"
+msgstr ""
+
+#: functions.php:57
+msgid "Add New Course"
+msgstr ""
+
+#: functions.php:58
+msgid "Edit Course"
+msgstr ""
+
+#: functions.php:70
+msgid "Lessons"
+msgstr ""
+
+#: functions.php:71
+msgid "Lesson"
+msgstr ""
+
+#: functions.php:72
+msgid "Add New Lesson"
+msgstr ""
+
+#: functions.php:73
+msgid "Edit Lesson"
+msgstr ""
+
+#: functions.php:85
+msgid "Publications"
+msgstr ""
+
+#: functions.php:86
+msgid "Publication"
+msgstr ""
+
+#: functions.php:87
+msgid "Add New Publication"
+msgstr ""
+
+#: functions.php:88
+msgid "Edit Publication"
+msgstr ""
