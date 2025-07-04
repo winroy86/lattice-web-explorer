@@ -2,11 +2,20 @@ import { Layout } from '@/components/Layout';
 import { EquationBlock } from '@/components/EquationBlock';
 import { Interactive3D } from '@/components/Interactive3D';
 import { CTAButton } from '@/components/CTAButton';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TheoryDiscreteTime = () => {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
+      <SEO 
+        title="Discrete Time Evolution – Lattice Theory"
+        description="Time as discrete collision intervals with revised uncertainty principle and velocity-dependent time dilation"
+        type="ScholarlyArticle"
+      />
       <div className="container mx-auto px-4 py-12">
         <nav className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -21,9 +30,9 @@ const TheoryDiscreteTime = () => {
             Discrete Time Evolution
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl">
-            Time in the cubic-diamond lattice theory is not a continuous parameter but consists 
-            of discrete steps. Each time step corresponds to one complete update of the entire 
-            lattice state, creating a digital physics foundation for temporal evolution.
+            Time emerges from discrete collision intervals between Planck-scale spheres. 
+            Each "tick" represents a collision event, with local time dilation arising from 
+            varying collision densities throughout the lattice structure.
           </p>
         </div>
 
@@ -31,63 +40,65 @@ const TheoryDiscreteTime = () => {
           <div className="space-y-8">
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                Temporal Quantization
+                Collision-Based Time
               </h2>
               <p className="text-muted-foreground mb-6">
-                Just as space is quantized into discrete lattice points, time is quantized 
-                into discrete intervals. This temporal quantization has profound implications 
-                for causality and the arrow of time.
+                Time intervals arise from sphere collision events. The fundamental relationship 
+                between distance, velocity, and time creates discrete temporal steps that vary 
+                with local collision density.
               </p>
               
               <EquationBlock 
-                latex="t_n = n \cdot t_p, \quad n \in \mathbb{N}"
-                caption="Discrete time as integer multiples of Planck time"
+                latex="\Delta t = \frac{\Delta x}{v}"
+                caption="Time interval from collision spacing and velocity"
               />
             </div>
 
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                State Evolution Rules
+                Revised Uncertainty Principle
               </h2>
               <p className="text-muted-foreground mb-6">
-                The lattice evolves according to deterministic rules that preserve quantum 
-                mechanical properties while operating on discrete time steps. This creates 
-                a computational universe where each step is calculable.
+                The discrete nature of space-time modifies the traditional uncertainty principle. 
+                The velocity-dependent formulation accounts for the finite resolution of the 
+                lattice structure and sphere interaction dynamics.
               </p>
               
               <EquationBlock 
-                latex="\psi_{i,j,k}(t+1) = \sum_{neighbors} W_{mn} \psi_{m,n,\ell}(t)"
-                caption="Lattice site evolution from neighboring sites"
+                latex="\Delta p \, \Delta x \ge \frac{\hbar v}{c}"
+                caption="Modified uncertainty principle with velocity dependence"
               />
             </div>
           </div>
 
           <div className="space-y-8">
             <Interactive3D 
-              caption="Time Evolution of Lattice States (Animation)"
+              src="/models/time-evolution.glb"
+              caption="Discrete Time Evolution of Lattice Collisions"
               autoRotate={false}
+              cameraPosition={[4, 2, 4]}
             />
             
             <div className="theory-card">
               <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
-                Implications
+                Key Consequences
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  The arrow of time emerges from computation direction
+                  Time dilation from collision density variations
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Causality is preserved through local interactions
+                  Velocity-dependent uncertainty principle
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Time dilation emerges from lattice computation rates
+                  Discrete causality through collision events
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Quantum uncertainty relates to computational limits
+                  No need for continuous time coordinates
                 </li>
               </ul>
             </div>

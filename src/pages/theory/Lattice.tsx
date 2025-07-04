@@ -2,11 +2,20 @@ import { Layout } from '@/components/Layout';
 import { EquationBlock } from '@/components/EquationBlock';
 import { Interactive3D } from '@/components/Interactive3D';
 import { CTAButton } from '@/components/CTAButton';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TheoryLattice = () => {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
+      <SEO 
+        title="Cubic-Diamond Lattice Structure – Lattice Theory"
+        description="The foundational cubic-diamond lattice structure with atomic packing factor 0.34 and lattice parameter based on Planck length"
+        type="ScholarlyArticle"
+      />
       <div className="container mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="mb-8">
@@ -23,9 +32,9 @@ const TheoryLattice = () => {
             Cubic-Diamond Lattice Structure
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl">
-            The foundation of our theory lies in the discrete structure of spacetime itself. 
-            Rather than continuous space and time, we propose that reality is built upon a 
-            cubic-diamond lattice with fundamental units of distance and time intervals.
+            Space-time consists of Planck-scale spheres arranged in a cubic-diamond lattice. 
+            This discrete structure provides the foundation for all physical phenomena, with 
+            an atomic packing factor (APF) of 0.34 and lattice parameter derived from fundamental constants.
           </p>
         </div>
 
@@ -34,68 +43,75 @@ const TheoryLattice = () => {
           <div className="space-y-8">
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                Fundamental Lattice Properties
+                Lattice Parameters
               </h2>
               <p className="text-muted-foreground mb-6">
-                The cubic-diamond lattice represents the most fundamental level of physical reality. 
-                Each lattice point can exist in various states, and the connections between points 
-                carry the information that we observe as physical phenomena.
+                The cubic-diamond lattice consists of Planck-scale spheres with specific geometric 
+                constraints. The lattice parameter and atomic packing factor define the fundamental 
+                structure of discrete space-time.
               </p>
               
               <EquationBlock 
-                latex="L_p = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616 \times 10^{-35} \text{ m}"
-                caption="Planck Length - The fundamental lattice spacing"
+                latex="a = \sqrt[3]{\frac{3\sqrt{3}}{4}} \, l_P"
+                caption="Lattice parameter in terms of Planck length"
+              />
+               
+              <EquationBlock 
+                latex="\text{APF} = 0.34"
+                caption="Atomic Packing Factor for cubic-diamond structure"
               />
               
               <EquationBlock 
-                latex="t_p = \sqrt{\frac{\hbar G}{c^5}} \approx 5.391 \times 10^{-44} \text{ s}"
-                caption="Planck Time - The fundamental time interval"
+                latex="l_P = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616 \times 10^{-35} \text{ m}"
+                caption="Planck Length - sphere diameter"
               />
             </div>
 
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                Lattice Dynamics
+                Sphere Interactions
               </h2>
               <p className="text-muted-foreground mb-6">
-                The evolution of the lattice follows discrete rules similar to cellular automata, 
-                but with quantum mechanical properties. Each lattice site can be in a superposition 
-                of states, and the transitions between time steps preserve unitarity.
+                Planck-scale spheres interact through collisions and maintain the lattice structure. 
+                These interactions occur at discrete time intervals, with collision density determining 
+                local time dilation effects.
               </p>
               
               <EquationBlock 
-                latex="|\psi(t + \Delta t)\rangle = U(\Delta t) |\psi(t)\rangle"
-                caption="Unitary evolution of lattice states"
+                latex="v_{\text{sphere}} = c \sqrt{1 - \frac{\rho}{\rho_{\max}}}"
+                caption="Sphere velocity as function of collision density"
               />
             </div>
           </div>
 
           <div className="space-y-8">
             <Interactive3D 
+              src="/models/lattice-cube.glb"
               caption="3D Visualization of the Cubic-Diamond Lattice Structure"
               autoRotate={true}
+              cameraPosition={[3, 3, 3]}
             />
             
             <div className="theory-card">
               <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
-                Key Takeaways
+                Key Properties
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Spacetime is fundamentally discrete, not continuous
+                  APF = 0.34 maximizes sphere packing efficiency
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  The lattice spacing is on the order of the Planck length
+                  Lattice parameter scales with Planck length
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Quantum superposition exists at the lattice level
+                  Sphere collisions create discrete time intervals
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  All physical phenomena emerge from lattice dynamics
+                  Collision density determines local velocities
                 </li>
               </ul>
             </div>

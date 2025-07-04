@@ -15,7 +15,7 @@ Install these essential plugins for full functionality:
 
 **Core Functionality:**
 - **MathJax-LaTeX** - For rendering mathematical equations (\\( \\) and \\[ \\] syntax)
-- **Three-D-Viewer** - For 3D model display and WebGL content
+- **react-i18next-wp-helper** - Bridge for React i18n in WordPress (English/Hebrew support)
 - **Advanced Custom Fields (Pro)** - For theory content management
 
 **Course & Learning Management:**

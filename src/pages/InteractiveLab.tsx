@@ -118,20 +118,97 @@ const InteractiveLab = () => {
             3D Demonstration Gallery
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {demos.map((demo, index) => (
-              <div key={index} className="theory-card">
-                <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
-                  {demo.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {demo.description}
-                </p>
-                <Interactive3D 
-                  caption={demo.title}
-                  autoRotate={index % 2 === 0}
-                />
-              </div>
-            ))}
+            <div className="theory-card">
+              <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
+                Cubic-Diamond Lattice
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Interactive 3D model of the fundamental lattice structure with APF = 0.34
+              </p>
+              <Interactive3D 
+                src="/models/lattice-cube.glb"
+                caption="Cubic-Diamond Lattice Structure"
+                autoRotate={true}
+                cameraPosition={[3, 3, 3]}
+              />
+              <CTAButton 
+                variant="secondary" 
+                href="https://colab.research.google.com/drive/lattice-demo"
+                icon={<ExternalLink className="w-4 h-4" />}
+                className="w-full mt-4"
+              >
+                Open in Colab
+              </CTAButton>
+            </div>
+            
+            <div className="theory-card">
+              <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
+                Photon Spiral Motion
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Spiral disturbance propagation with energy E = m_P c²/N_photon
+              </p>
+              <Interactive3D 
+                src="/models/photon-spiral.glb"
+                caption="Photon Spiral Propagation"
+                autoRotate={false}
+                cameraPosition={[4, 2, 4]}
+              />
+              <CTAButton 
+                variant="secondary" 
+                href="https://colab.research.google.com/drive/photon-demo"
+                icon={<ExternalLink className="w-4 h-4" />}
+                className="w-full mt-4"
+              >
+                Open in Colab
+              </CTAButton>
+            </div>
+            
+            <div className="theory-card">
+              <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
+                Electron Figure-8 Knot
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Four-sphere knot structure showing charge and spin states
+              </p>
+              <Interactive3D 
+                src="/models/electron-fig8.glb"
+                caption="Electron Figure-8 Knot Structure"
+                autoRotate={true}
+                cameraPosition={[2, 2, 2]}
+              />
+              <CTAButton 
+                variant="secondary" 
+                href="https://colab.research.google.com/drive/electron-demo"
+                icon={<ExternalLink className="w-4 h-4" />}
+                className="w-full mt-4"
+              >
+                Open in Colab
+              </CTAButton>
+            </div>
+            
+            <div className="theory-card">
+              <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
+                Higgs Harmonic Field
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Mass generation through harmonic oscillation coupling
+              </p>
+              <Interactive3D 
+                src="/models/higgs-harmonic.glb"
+                caption="Higgs Field Harmonic Coupling"
+                autoRotate={false}
+                cameraPosition={[3, 3, 3]}
+              />
+              <CTAButton 
+                variant="secondary" 
+                href="https://colab.research.google.com/drive/higgs-demo"
+                icon={<ExternalLink className="w-4 h-4" />}
+                className="w-full mt-4"
+              >
+                Open in Colab
+              </CTAButton>
+            </div>
           </div>
         </section>
 

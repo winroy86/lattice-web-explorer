@@ -2,11 +2,20 @@ import { Layout } from '@/components/Layout';
 import { EquationBlock } from '@/components/EquationBlock';
 import { Interactive3D } from '@/components/Interactive3D';
 import { CTAButton } from '@/components/CTAButton';
+import { SEO } from '@/components/SEO';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TheoryElectron = () => {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
+      <SEO 
+        title="Electron Figure-8 Knot – Lattice Theory"
+        description="Electrons as four-sphere figure-8 knots with mass m_P/4 and topological charge properties"
+        type="ScholarlyArticle"
+      />
       <div className="container mx-auto px-4 py-12">
         <nav className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -18,12 +27,12 @@ const TheoryElectron = () => {
 
         <div className="mb-12">
           <h1 className="font-merriweather font-bold text-4xl md:text-5xl mb-6">
-            Electron Dynamics in Lattice Space
+            Electron Figure-8 Knot Structure
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl">
-            Electrons in the cubic-diamond lattice theory are not point particles but rather 
-            stable excitation patterns that propagate through the discrete spacetime structure. 
-            Their wave-like properties emerge naturally from the lattice dynamics.
+            Electrons are figure-8 knots formed by four Planck-scale spheres in harmonic motion. 
+            This topological structure naturally explains charge, spin, and mass through 
+            geometric properties of the knot configuration.
           </p>
         </div>
 
@@ -31,63 +40,65 @@ const TheoryElectron = () => {
           <div className="space-y-8">
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                Wave Function in Lattice Space
+                Four-Sphere Knot Structure
               </h2>
               <p className="text-muted-foreground mb-6">
-                The electron wave function represents a probability distribution across 
-                lattice sites. The discrete nature of the lattice naturally leads to 
-                quantized energy levels and orbital structures.
+                The electron consists of exactly four Planck-scale spheres arranged in a figure-8 
+                knot topology. This closed-loop configuration provides stability and defines 
+                the electron's fundamental properties.
               </p>
               
               <EquationBlock 
-                latex="\psi(\mathbf{r}) = \sum_{i,j,k} c_{i,j,k} |i,j,k\rangle"
-                caption="Electron wave function as lattice site superposition"
+                latex="m_e = \frac{m_P}{N_{\text{electron}}} = \frac{m_P}{4}"
+                caption="Electron mass from four-sphere count"
               />
             </div>
 
             <div className="theory-card">
               <h2 className="font-merriweather font-semibold text-2xl mb-4 text-cobalt">
-                Spin and Magnetic Moment
+                Charge and Spin Properties
               </h2>
               <p className="text-muted-foreground mb-6">
-                Electron spin emerges from the internal rotation of the excitation pattern 
-                within the lattice structure. The magnetic moment is a consequence of this 
-                internal angular momentum.
+                Electric charge emerges from the topological orientation of the figure-8 knot. 
+                Spin-1/2 behavior arises from the knot's internal angular momentum, with 
+                spin-up and spin-down corresponding to different circulation directions.
               </p>
               
               <EquationBlock 
-                latex="\mu = -g \mu_B \frac{\mathbf{S}}{\hbar}"
-                caption="Magnetic moment from lattice spin dynamics"
+                latex="q_e = \pm e \quad \text{(topological charge)}"
+                caption="Charge from knot chirality: electron (-e), positron (+e)"
               />
             </div>
           </div>
 
           <div className="space-y-8">
             <Interactive3D 
-              caption="Electron Wave Function Visualization in Lattice"
+              src="/models/electron-fig8.glb"
+              caption="Electron Figure-8 Knot with Four Spheres"
               autoRotate={true}
+              cameraPosition={[2, 2, 2]}
             />
             
             <div className="theory-card">
               <h3 className="font-merriweather font-semibold text-xl mb-4 text-cobalt">
-                Observable Properties
+                Topological Properties
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Mass emerges from lattice excitation energy
+                  Mass: m_P/4 from four-sphere structure
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Charge is a topological property of the pattern
+                  Charge: ±e from knot chirality
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Spin arises from internal pattern rotation
+                  Spin: 1/2 from knot angular momentum
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-cobalt rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Uncertainty principle from lattice discretization
+                  Stability: Topological protection of knot
                 </li>
               </ul>
             </div>
