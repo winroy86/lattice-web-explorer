@@ -10,6 +10,7 @@ interface Interactive3DProps {
   autoRotate?: boolean;
   className?: string;
   fallbackImage?: string;
+  cameraPosition?: [number, number, number];
 }
 
 // Cubic Diamond Lattice Geometry
@@ -126,7 +127,8 @@ export const Interactive3D = ({
   caption, 
   autoRotate = true, 
   className = "",
-  fallbackImage 
+  fallbackImage,
+  cameraPosition = [5, 5, 5]
 }: Interactive3DProps) => {
   return (
     <div className={`w-full h-96 theory-card ${className}`}>
@@ -137,7 +139,7 @@ export const Interactive3D = ({
           </div>
         }>
           <Canvas>
-            <PerspectiveCamera makeDefault position={[5, 5, 5]} />
+            <PerspectiveCamera makeDefault position={cameraPosition} />
             
             {/* Lighting */}
             <ambientLight intensity={0.4} />

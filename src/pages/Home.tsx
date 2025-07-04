@@ -2,22 +2,32 @@ import { Layout } from '@/components/Layout';
 import { CTAButton } from '@/components/CTAButton';
 import { Interactive3D } from '@/components/Interactive3D';
 import { EquationBlock } from '@/components/EquationBlock';
+import { SEO } from '@/components/SEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, BookOpen, Microscope, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   return (
     <Layout>
+      <SEO 
+        title="Roy Winter's Cubic-Diamond-Lattice Theory of Everything"
+        description="Discrete-lattice physics framework unifying quantum mechanics and relativity through Planck-scale cubic-diamond lattice structures and pressure field dynamics."
+        type="website"
+        keywords={['discrete lattice physics', 'cubic diamond lattice', 'theory of everything', 'quantum mechanics', 'relativity', 'Roy Winter']}
+      />
+      
       {/* Hero Section */}
       <section className="hero-gradient py-20 px-4">
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="font-merriweather font-bold text-4xl md:text-6xl mb-6 text-foreground">
-              Roy Winter's <span className="text-cobalt">Cubic-Diamond-Lattice</span> Theory of Everything
+              {t('home.title')}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              A revolutionary approach to fundamental physics that unifies quantum mechanics and relativity 
-              through discrete spacetime lattices and pressure field dynamics.
+              {t('home.subtitle')}
             </p>
             
             {/* Hero CTA Buttons */}
@@ -25,18 +35,18 @@ const Home = () => {
               <CTAButton 
                 variant="hero" 
                 size="lg"
-                href="/theory"
+                href="/theory/lattice"
                 icon={<BookOpen className="w-5 h-5" />}
               >
-                Start Learning
+                {t('home.cta.explore')}
               </CTAButton>
               <CTAButton 
                 variant="secondary" 
                 size="lg"
-                href="/publications"
+                href="/assets/white-paper.pdf"
                 icon={<Download className="w-5 h-5" />}
               >
-                Download White Paper
+                {t('home.cta.download')}
               </CTAButton>
             </div>
           </div>
@@ -44,8 +54,10 @@ const Home = () => {
           {/* Interactive 3D Visualization */}
           <div className="max-w-4xl mx-auto">
             <Interactive3D 
+              src="/models/lattice-cube.glb"
               caption="Interactive Cubic-Diamond Lattice Structure - Click and drag to explore"
               autoRotate={true}
+              cameraPosition={[3, 3, 3]}
               className="shadow-2xl"
             />
           </div>
@@ -57,7 +69,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-merriweather font-bold text-3xl md:text-4xl mb-4">
-              The Theory in 30 Seconds
+              Core Theoretical Framework
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Understanding the fundamental structure of spacetime through discrete lattice mechanics
@@ -68,29 +80,27 @@ const Home = () => {
             <div className="space-y-6">
               <div className="theory-card">
                 <h3 className="font-merriweather font-semibold text-xl mb-3 text-cobalt">
-                  Discrete Spacetime Lattice
+                  {t('feature.electron.title')}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Space and time are not continuous but exist as a discrete cubic-diamond lattice structure 
-                  with fundamental units of length and time.
+                  {t('feature.electron.desc')}
                 </p>
                 <EquationBlock 
-                  latex="L_p = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616 \times 10^{-35} \text{ m}"
-                  caption="Planck Length - The fundamental lattice spacing"
+                  latex="N_{\text{electron}} = 4"
+                  caption="Four Planck-scale spheres define electron mass"
                 />
               </div>
 
               <div className="theory-card">
                 <h3 className="font-merriweather font-semibold text-xl mb-3 text-cobalt">
-                  Pressure Field Dynamics
+                  {t('feature.photon.title')}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  All fundamental forces emerge from pressure variations in the lattice structure, 
-                  unifying gravity, electromagnetism, and nuclear forces.
+                  {t('feature.photon.desc')}
                 </p>
                 <EquationBlock 
-                  latex="F = -\nabla P(\mathbf{r}, t)"
-                  caption="Force as pressure gradient in lattice space"
+                  latex="E = \frac{m_P c^2}{N_{\text{photon}}}"
+                  caption="Photon energy from lattice sphere disturbance"
                 />
               </div>
             </div>
@@ -98,29 +108,27 @@ const Home = () => {
             <div className="space-y-6">
               <div className="theory-card">
                 <h3 className="font-merriweather font-semibold text-xl mb-3 text-cobalt">
-                  Quantum Emergence
+                  {t('feature.time.title')}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Quantum mechanics emerges naturally from the discrete lattice structure, 
-                  explaining wave-particle duality and uncertainty principles.
+                  {t('feature.time.desc')}
                 </p>
                 <EquationBlock 
-                  latex="\psi(\mathbf{r}, t) = \sum_{\mathbf{n}} A_{\mathbf{n}} e^{i\mathbf{k} \cdot \mathbf{r} - i\omega t}"
-                  caption="Wave function as lattice site superposition"
+                  latex="\Delta t = \frac{\Delta x}{v}"
+                  caption="Discrete time steps from lattice dynamics"
                 />
               </div>
 
               <div className="theory-card">
                 <h3 className="font-merriweather font-semibold text-xl mb-3 text-cobalt">
-                  Relativistic Consistency
+                  {t('feature.gravity.title')}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  The lattice structure preserves Lorentz invariance at macroscopic scales 
-                  while providing a discrete foundation for spacetime.
+                  {t('feature.gravity.desc')}
                 </p>
                 <EquationBlock 
-                  latex="ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2"
-                  caption="Emergent spacetime metric from lattice dynamics"
+                  latex="v(r) = \frac{v_0 r_0^2}{r^2}"
+                  caption="Velocity profile creates gravitational effects"
                 />
               </div>
             </div>
@@ -133,25 +141,24 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-merriweather font-bold text-3xl md:text-4xl mb-4">
-              Why This Theory Matters
+              Revolutionary Physics Insights
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Revolutionary insights that address fundamental problems in modern physics
+              Novel explanations for fundamental phenomena through discrete lattice structure
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="theory-card text-center">
               <CardContent className="p-6">
                 <div className="w-16 h-16 bg-cobalt/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Microscope className="w-8 h-8 text-cobalt" />
                 </div>
                 <h3 className="font-merriweather font-semibold text-xl mb-3">
-                  Unifies All Forces
+                  Revised Uncertainty Principle
                 </h3>
                 <p className="text-muted-foreground">
-                  Explains gravity, electromagnetism, and nuclear forces as manifestations 
-                  of pressure variations in the underlying lattice structure.
+                  Modified uncertainty relation: Δp·Δx ≥ ℏv/c accounts for lattice velocity constraints.
                 </p>
               </CardContent>
             </Card>
@@ -162,11 +169,10 @@ const Home = () => {
                   <BookOpen className="w-8 h-8 text-academic-green" />
                 </div>
                 <h3 className="font-merriweather font-semibold text-xl mb-3">
-                  Solves Dark Matter
+                  {t('feature.redshift.title')}
                 </h3>
                 <p className="text-muted-foreground">
-                  Provides a natural explanation for dark matter and dark energy 
-                  through lattice compression and expansion dynamics.
+                  {t('feature.redshift.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -180,8 +186,7 @@ const Home = () => {
                   Testable Predictions
                 </h3>
                 <p className="text-muted-foreground">
-                  Makes specific, testable predictions about particle behavior 
-                  and cosmological phenomena that can be verified experimentally.
+                  Specific predictions for electron charge, spin, and annihilation photon polarization.
                 </p>
               </CardContent>
             </Card>
@@ -193,21 +198,20 @@ const Home = () => {
       <section className="py-20 px-4 bg-cobalt text-white">
         <div className="container mx-auto text-center">
           <h2 className="font-merriweather font-bold text-3xl md:text-4xl mb-4">
-            Ready to Explore the Theory?
+            Explore the Mathematical Framework
           </h2>
           <p className="text-xl text-cobalt-light mb-8 max-w-2xl mx-auto">
-            Dive deep into the mathematical foundations, explore interactive visualizations, 
-            and join our community of researchers and enthusiasts.
+            Discover the equations, visualizations, and theoretical foundations of discrete-lattice physics.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton 
               variant="secondary" 
               size="lg"
-              href="/theory"
+              href="/theory/lattice"
               className="bg-white text-cobalt hover:bg-gray-100"
             >
-              Explore Theory
+              Start with Lattice Theory
             </CTAButton>
             <CTAButton 
               variant="secondary" 
@@ -215,15 +219,15 @@ const Home = () => {
               href="/lab"
               className="bg-transparent border-white text-white hover:bg-white hover:text-cobalt"
             >
-              Interactive Lab
+              Interactive Demonstrations
             </CTAButton>
             <CTAButton 
               variant="secondary" 
               size="lg"
-              href="/community"
+              href="/theory/testable-predictions"
               className="bg-transparent border-white text-white hover:bg-white hover:text-cobalt"
             >
-              Join Community
+              Testable Predictions
             </CTAButton>
           </div>
         </div>
