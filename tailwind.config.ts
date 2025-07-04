@@ -18,12 +18,31 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'merriweather': ['Merriweather', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				cobalt: {
+					DEFAULT: 'hsl(var(--cobalt))',
+					light: 'hsl(var(--cobalt-light))',
+					dark: 'hsl(var(--cobalt-dark))',
+				},
+				academic: {
+					blue: 'hsl(var(--academic-blue))',
+					green: 'hsl(var(--academic-green))',
+					orange: 'hsl(var(--academic-orange))',
+				},
+				neutral: {
+					light: 'hsl(var(--neutral-light))',
+					medium: 'hsl(var(--neutral-medium))',
+					dark: 'hsl(var(--neutral-dark))',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

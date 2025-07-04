@@ -3,22 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lattice-web-explorer</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Roy Winter's Cubic-Diamond-Lattice Theory of Everything</title>
+    <meta name="description" content="Roy Winter's groundbreaking Cubic-Diamond-Lattice Theory of Everything - A revolutionary approach to fundamental physics combining discrete spacetime lattices with unified field theory." />
+    <meta name="author" content="Roy Winter" />
+    <meta name="keywords" content="physics, theory of everything, lattice theory, quantum mechanics, relativity, unified field theory" />
 
-    <meta property="og:title" content="lattice-web-explorer" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Roy Winter's Cubic-Diamond-Lattice Theory of Everything" />
+    <meta property="og:description" content="Explore the revolutionary physics theory that unifies quantum mechanics and relativity through discrete spacetime lattices." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="/images/theory-preview.jpg" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="Roy Winter's Cubic-Diamond-Lattice Theory" />
+    <meta name="twitter:description" content="Revolutionary physics theory unifying quantum mechanics and relativity" />
+    <meta name="twitter:image" content="/images/theory-preview.jpg" />
+
+    <!-- MathJax Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['\\(', '\\)']],
+          displayMath: [['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          ignoreHtmlClass: 'no-mathjax'
+        },
+        startup: {
+          ready() {
+            MathJax.startup.defaultReady();
+            console.log('MathJax is loaded and ready');
+          }
+        }
+      };
+    </script>
+    <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- WordPress Conversion Hooks -->
+    <!-- wp_head -->
+    <!-- /wp_head -->
   </head>
 
-  <body>
+  <body dir="auto">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- WordPress Conversion Hooks -->
+    <!-- wp_footer -->
+    <!-- /wp_footer -->
   </body>
 </html>
